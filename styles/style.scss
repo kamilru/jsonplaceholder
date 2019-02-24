@@ -1,0 +1,149 @@
+//Variables
+$h1-font-size: 32px;
+$h1-color: azure;
+$navbar-height: 230px;
+$navbar-color: cornflowerblue;
+//Global styles
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: $h1-font-size;
+    color: $h1-color;
+    margin: 5px 0;
+}
+
+.container {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 10px;
+    
+    @media only screen and (max-width: 991px) {
+        padding: 15px;
+    }
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media only screen and (max-width: 800pt) {
+       flex-wrap: wrap;
+    }
+}
+
+.column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    width: 100%;
+    padding: 0 10px;
+    
+    &:first-child {
+      &:after { 
+          content: "";
+          width: 1px;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.2);
+          position: absolute;
+          right: -15px;
+        }
+        
+    }
+    
+    @media only screen and (max-width: 800pt) {
+        max-width: 100%;
+        padding: 10px;
+        
+        &:first-child {
+          &:after { 
+              content: "";
+              width: 100%;
+              height: 1px;
+              background-color: rgba(0, 0, 0, 0.2);
+              position: absolute;
+              left: 0;
+              bottom: 0;
+            }
+            }
+    }
+}
+
+//Custom styles
+.navbar {
+    display: block;
+    max-height: navbar-height;
+    background-color: $navbar-color;
+}
+.resultContainer, .imageContainer {
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.imageContainer {
+    align-items: center;
+    
+    img {
+        border-radius: 60pt;
+        transition: border-radius 0.2s ease-in-out;
+        
+        &:hover {
+            border-radius: 0;
+        }
+    }
+}
+
+.resultContainer {
+    a {
+        text-decoration: none;
+        text-transform: capitalize;
+        color: darkslategrey;
+        display: inline-block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 5px 0 10px 0;
+        
+        &:hover {
+            color: chocolate;
+            border-color: chocolate;
+        }
+    }
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: skyblue;
+        text-decoration: none;
+        color: white;
+        margin: 5px;
+    }
+     p {
+        display: inline-block;
+        padding: 5px;
+        font-size: 20px;
+        color: skyblue;
+    }
+}
+
+
+
+.pageCounter {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
